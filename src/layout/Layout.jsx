@@ -14,7 +14,7 @@ const Layout = () => {
             </nav>
         </div>
 
-        <div className='col-9 colum-der'>
+        <div className='col-9 colum-der p-4 '>
             <Outlet />
         </div>
 
