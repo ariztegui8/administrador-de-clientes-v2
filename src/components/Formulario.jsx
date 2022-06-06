@@ -9,11 +9,16 @@ const Formulario = () => {
           nombre: Yup.string()
                .min(3, 'El nombre es muy corto')
                .max(25, 'El nombre es demasiado largo')
-               .required('El nombre del cliente es obligatorio'),
-          empresa: '',
-          email: '',
-          telefono: '',
-          notas: ''
+               .required('El nombre del Cliente es obligatorio'),
+          empresa: Yup.string()
+               .required('El nombre de la Empresa es obligatorio')   ,
+          email: Yup.string()
+               .email('E-mail no válido')
+               .required('El E-mail es obligatorio'),    
+          telefono: Yup.number()
+               .typeError('El numero no es válido')
+               .integer('El numero no es válido')
+               .positive('El numero no es válido'),
      })
 
      const handleSubmit = (valores) =>{
@@ -72,6 +77,9 @@ const Formulario = () => {
                         placeholder='Empresa del Cliente'
                         name='empresa'
                    />
+                   {errors.empresa && touched.nombre ? (
+                         <Alerta>{errors.empresa}</Alerta>
+                    ) : null}
                 </div>
 
                 <div className='mb-3'>
@@ -86,6 +94,9 @@ const Formulario = () => {
                         placeholder='Email del Cliente'
                         name='email'
                    />
+                   {errors.email && touched.nombre ? (
+                         <Alerta>{errors.email}</Alerta>
+                    ) : null}
                 </div>
 
                 <div className='mb-3'>
@@ -100,6 +111,9 @@ const Formulario = () => {
                         placeholder='Teléfono del Cliente'
                         name='telefono'
                    />
+                   {errors.telefono && touched.nombre ? (
+                         <Alerta>{errors.telefono}</Alerta>
+                    ) : null}
                 </div>
 
                 <div className='mb-3'>
