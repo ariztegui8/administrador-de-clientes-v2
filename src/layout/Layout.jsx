@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Outlet} from 'react-router-dom'
+import { NavLink, Outlet} from 'react-router-dom'
 
 const Layout = () => {
 
@@ -9,8 +9,11 @@ const Layout = () => {
         <div className='col-3 colum-izq'>
             <h2 className='text-white text-center mt-4 mb-5 fw-bold'>CRM - Clientes</h2>
             <nav className='d-flex flex-column fs-5'>
-                <Link className='text-white text-decoration-none mb-2' to='/clientes'>Clientes</Link>
-                <Link className='text-white text-decoration-none' to='/clientes/nuevo'>Nuevo Cliente</Link>
+                <NavLink className='text-white text-decoration-none mb-2' to='/clientes'
+                >Clientes</NavLink>
+
+                <NavLink className='text-white text-decoration-none' to='/clientes/nuevo'
+                >Nuevo Cliente</NavLink>
             </nav>
         </div>
 

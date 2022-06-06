@@ -5,6 +5,8 @@
 
 .colum-der{
     background-color: #f5f5f5;
+    overflow-y: scroll;
+    height: 100vh;
 }
 
 .title-nuevo-cliente{

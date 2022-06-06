@@ -1,19 +1,44 @@
 {
-  "posts": [
+  "clientes": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "nombre": "Jorge",
+      "empresa": "Alfajor",
+      "email": "jorge@jorge.com",
+      "telefono": "2458755624",
+      "notas": "puto",
+      "id": 1
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "nombre": "Jorge",
+      "empresa": "Alfajor",
+      "email": "jorge@jorge.com",
+      "telefono": "2458755624",
+      "notas": "puto",
+      "id": 2
+    },
+    {
+      "nombre": "Jorge",
+      "empresa": "Alfajor",
+      "email": "jorge@jorge.com",
+      "telefono": "2458755624",
+      "notas": "puto",
+      "id": 3
+    },
+    {
+      "nombre": "Jorge",
+      "empresa": "Alfajor",
+      "email": "jorge@jorge.com",
+      "telefono": "2458755624",
+      "notas": "puto",
+      "id": 4
+    },
+    {
+      "nombre": "juan",
+      "empresa": "cagon",
+      "email": "cagon@puto.com",
+      "telefono": "44787877454",
+      "notas": "dadsadadsdsdsadasd",
+      "id": 5
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
