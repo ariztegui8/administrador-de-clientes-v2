@@ -2,42 +2,42 @@
   "clientes": [
     {
       "nombre": "Jorge",
-      "empresa": "Alfajor",
-      "email": "jorge@jorge.com",
-      "telefono": "2458755624",
+      "empresa": "Perros",
+      "email": "perros@perros.com",
+      "telefono": "243343324",
       "notas": "puto",
       "id": 1
     },
     {
-      "nombre": "Jorge",
+      "nombre": "Juan",
       "empresa": "Alfajor",
-      "email": "jorge@jorge.com",
-      "telefono": "2458755624",
-      "notas": "puto",
+      "email": "juan@juan.com",
+      "telefono": "24878788824",
+      "notas": "gato",
       "id": 2
     },
     {
-      "nombre": "Jorge",
-      "empresa": "Alfajor",
-      "email": "jorge@jorge.com",
-      "telefono": "2458755624",
-      "notas": "puto",
+      "nombre": "Jiro",
+      "empresa": "Perlas",
+      "email": "perlas@perlas.com",
+      "telefono": "2489324242424624",
+      "notas": "bobo",
       "id": 3
     },
     {
-      "nombre": "Jorge",
-      "empresa": "Alfajor",
-      "email": "jorge@jorge.com",
+      "nombre": "Pedro",
+      "empresa": "Nonito",
+      "email": "nonito@nonito.com",
       "telefono": "2458755624",
-      "notas": "puto",
+      "notas": "estupido",
       "id": 4
     },
     {
-      "nombre": "juan",
-      "empresa": "cagon",
-      "email": "cagon@puto.com",
-      "telefono": "44787877454",
-      "notas": "dadsadadsdsdsadasd",
+      "nombre": "Carlos",
+      "empresa": "Gonca",
+      "email": "carlos@carlos.com",
+      "telefono": "465600098797454",
+      "notas": "culiao",
       "id": 5
     }
   ]
