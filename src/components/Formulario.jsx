@@ -3,8 +3,9 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import Alerta from './Alerta';
+import Spinner from './Spinner';
 
-const Formulario = () => {
+const Formulario = ({cliente, cargando}) => {
 
      const navigate = useNavigate();
 
@@ -26,17 +27,31 @@ const Formulario = () => {
 
      const handleSubmit = async (valores) =>{
           try {
-               const url = 'http://localhost:4000/clientes';
-               const respuesta = await fetch(url, {
-                    method: 'POST',
-                    body: JSON.stringify(valores),
-                    headers: {
-                         'Content-Type': 'application/json'
-                    }
-               });
-               const resultado = await respuesta.json()
-               console.log(resultado);
-               navigate('/clientes')
+              if(cliente.id){
+                    const url = `http://localhost:4000/clientes/${cliente.id}`;
+                    const respuesta = await fetch(url, {
+                         method: 'PUT',
+                         body: JSON.stringify(valores),
+                         headers: {
+                              'Content-Type': 'application/json'
+                         }
+                    });
+                    const resultado = await respuesta.json()
+                    console.log(resultado);
+                    navigate('/clientes')
+              } else{
+                    const url = 'http://localhost:4000/clientes';
+                    const respuesta = await fetch(url, {
+                         method: 'POST',
+                         body: JSON.stringify(valores),
+                         headers: {
+                              'Content-Type': 'application/json'
+                         }
+                    });
+                    const resultado = await respuesta.json()
+                    console.log(resultado);
+                    navigate('/clientes')
+              }
                
           } catch (error) {
                console.log(error);
@@ -44,17 +59,20 @@ const Formulario = () => {
      }
 
   return (
+
+     cargando ? <Spinner/> : (
     <div className='bg-white p-4 mt-4 w-75 m-auto fw-bold rounded-2'>
-        <h4 className='text-uppercase text-secondary text-center'>Agregar Cliente</h4>
+        <h4 className='text-uppercase text-secondary text-center'>{cliente?.nombre ? 'Editar Cliente' : 'Agregar Cliente'}</h4>
 
         <Formik
           initialValues={{
-               nombre: '',
-               empresa: '',
-               email: '',
-               telefono: '',
-               notas: ''
+               nombre: cliente?.nombre ?? "",
+               empresa: cliente?.empresa ?? "",
+               email: cliente?.email ?? "",
+               telefono: cliente?.telefono ?? "",
+               notas: cliente?.notas ?? ""
           }}
+          enableReinitialize={true}
           onSubmit={ async (values, {resetForm})=>{
               await handleSubmit(values);
                resetForm()
@@ -152,7 +170,7 @@ const Formulario = () => {
 
                 <input
                     type="submit"
-                    value='Agregar Cliente'
+                    value={cliente?.nombre ? 'Editar Cliente' : 'Agregar Cliente'}
                     className='p-2 mt-2 w-100 fw-bold text-white input-submit-form'
                 />
             </Form>
@@ -160,7 +178,13 @@ const Formulario = () => {
           )}
         </Formik>
     </div>
+    )
   )
+}
+
+Formulario.defaultProps ={
+     cliente: {},
+     cargando: false
 }
 
 export default Formulario

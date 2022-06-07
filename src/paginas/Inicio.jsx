@@ -20,6 +20,26 @@ const Inicio = () => {
     consultarApi();
   }, []);
 
+  const handleDelete = async id =>{
+    const confirmar = window.confirm('¿Deseas eliminar este Cliente?')
+    
+    if(confirmar){
+      try {
+        const url = `http://localhost:4000/clientes/${id}`
+        const respuesta = await fetch(url, {
+          method: 'DELETE'
+        })
+        await respuesta.json()
+
+        const arrayClientes = clientes.filter(cliente => cliente.id !== id)
+        setClientes(arrayClientes)
+        
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
+
   return (
     <div>
       <h2 className='fw-bold title-nuevo-cliente'>Clientes</h2>
@@ -41,6 +61,7 @@ const Inicio = () => {
             <Cliente
               key={cliente.id}
               cliente={cliente}
+              handleDelete={handleDelete}
             />
           ))}
         </tbody>

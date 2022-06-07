@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const Cliente = ({cliente}) => {
+const Cliente = ({cliente, handleDelete}) => {
 
     const navigate = useNavigate();
 
@@ -27,11 +27,13 @@ const Cliente = ({cliente}) => {
                 <button
                     type='button'
                     className='btn btn-warning m-1'
+                    onClick={()=> navigate(`/clientes/editar/${id}`)}
                 >Editar
                 </button>
                 <button
                     type='button'
                     className='btn btn-danger m-1'
+                    onClick={()=> handleDelete(id)}
                 >Eliminar
                 </button>
             </td>

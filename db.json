@@ -1,7 +1,7 @@
 {
   "clientes": [
     {
-      "nombre": "Jorge",
+      "nombre": "Jorge raul",
       "empresa": "Perros",
       "email": "perros@perros.com",
       "telefono": "243343324",
@@ -9,20 +9,12 @@
       "id": 1
     },
     {
-      "nombre": "Juan",
+      "nombre": "Juan carlos",
       "empresa": "Alfajor",
       "email": "juan@juan.com",
       "telefono": "24878788824",
       "notas": "gato",
       "id": 2
-    },
-    {
-      "nombre": "Jiro",
-      "empresa": "Perlas",
-      "email": "perlas@perlas.com",
-      "telefono": "2489324242424624",
-      "notas": "bobo",
-      "id": 3
     },
     {
       "nombre": "Pedro",

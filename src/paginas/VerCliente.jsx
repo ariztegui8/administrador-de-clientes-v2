@@ -23,7 +23,7 @@ const VerCliente = () => {
       
       setTimeout(()=>{
         setCargando(!cargando)
-      },2000)
+      },1500)
     }
     consultarApi();
   }, [])
